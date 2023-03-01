@@ -65,12 +65,12 @@ const SearchResult = ({ definition }) => {
     </div>
 
 
-    {_noun && <Meaning partOfSpeech={_noun?.partOfSpeech} definitions={_noun?.definitions} synonyms={_noun?.synonyms}/>}
-    {_verb && <Meaning partOfSpeech={_verb?.partOfSpeech} definitions={_verb?.definitions} synonyms={_verb?.synonyms}/>}
-    {_adverb && <Meaning partOfSpeech={_adverb?.partOfSpeech} definitions={_adverb?.definitions} synonyms={_adverb?.synonyms}/>}
-    {_preposition && <Meaning partOfSpeech={_preposition?.partOfSpeech} definitions={_preposition?.definitions} synonyms={_preposition?.synonyms}/>}
-    {_conjunction && <Meaning partOfSpeech={_conjunction?.partOfSpeech} definitions={_conjunction?.definitions} synonyms={_conjunction?.synonyms}/>}
-    {_adjective && <Meaning partOfSpeech={_adjective?.partOfSpeech} definitions={_adjective?.definitions} synonyms={_adjective?.synonyms}/>}
+    {_noun && <Meaning partOfSpeech={_noun?.partOfSpeech} definitions={_noun?.definitions} synonyms={_noun?.synonyms} antonyms={_noun?.antonyms}/>}
+    {_verb && <Meaning partOfSpeech={_verb?.partOfSpeech} definitions={_verb?.definitions} synonyms={_verb?.synonyms} antonyms={_verb?.antonyms}/>}
+    {_adverb && <Meaning partOfSpeech={_adverb?.partOfSpeech} definitions={_adverb?.definitions} synonyms={_adverb?.synonyms} antonyms={_adverb?.antonyms}/>}
+    {_preposition && <Meaning partOfSpeech={_preposition?.partOfSpeech} definitions={_preposition?.definitions} synonyms={_preposition?.synonyms} antonyms={_preposition?.antonyms}/>}
+    {_conjunction && <Meaning partOfSpeech={_conjunction?.partOfSpeech} definitions={_conjunction?.definitions} synonyms={_conjunction?.synonyms} antonyms={_conjunction?.antonyms}/>}
+    {_adjective && <Meaning partOfSpeech={_adjective?.partOfSpeech} definitions={_adjective?.definitions} synonyms={_adjective?.synonyms} antonyms={_adjective?.antonyms}/>}
 
 
     <hr className='line-footer'/>

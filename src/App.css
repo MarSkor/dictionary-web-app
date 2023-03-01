@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root{
+  --font-serif: 'Noto Serif', serif;
+  --font-sans-serif: 'Source Sans Pro', sans-serif;
+  --font-monospace: 'Source Code Pro', monospace;
+
+
+  --clr-primary: rgb(241, 241, 241);
+  --clr-secondary: rgb(21, 21, 21);
+  --clr-accent: rgb(110, 36, 200);
+
+  --clr-font: var(--clr-secondary);
+  --clr-font-gray:rgb(83, 83, 83);
+  --clr-break: rgb(216, 212, 220); 
+  --clr-play: rgb(203, 160, 255); 
+  --clr-accent-op: rgba(203, 160, 255, 0.5);
+
+  --clr-el-bg: rgb(236, 234, 238);
+  --clr-border: rgb(221, 218, 228);
+  
+
+  --bp-sm: 600px;
+  --bp-lg: 900px
+}
+
+
+[data-font="monospace"]{
+  --primary-font: var(--font-monospace);
+}
+
+[data-font="sans-serif"]{
+  --primary-font: var(--font-sans-serif);
+}
+
+[data-font="serif"]{
+  --primary-font: var(--font-serif);
+}
+
+
+[data-theme="dark"]{
+  --clr-primary:rgb(21, 21, 21) ;
+  --clr-secondary: rgb(241, 241, 241);
+  --clr-accent: rgb(201, 161, 250);
+  --clr-el-bg: rgb(30, 30, 30);
+  --clr-border: rgb(49, 49, 49);
+  --clr-font-gray:rgb(207, 207, 207);
+  --clr-break:rgb(78, 70, 87);
+  --clr-play: rgba(115, 0, 255, 0.6); 
+  --clr-accent-op: rgba(110, 36, 200, 0.312);
+}
+
+
+
+
+/*----------------------------------------------
+------------------------------------------------
+1. Universal Styles
+------------------------------------------------
+----------------------------------------------*/
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: var(--clr-primary);
+  font-family: var(--primary-font);
+}
+
+.wrapper{
+  max-width: var(--bp-lg);
+  margin: 0 auto;
+}
+
+.wrapper-content{
+  padding: 12px 12px;
+}
+
+
+/*----------------------------------------------
+------------------------------------------------
+2. Navbar
+------------------------------------------------
+----------------------------------------------*/
+
+.nav-content, .nav-right{
+  display: flex;
+  align-items: center;
+}
+
+.nav-content{
+  max-width: var(--bp-lg);
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px;
+}
+
+.select-wrap{
+  padding-right: 30px;
+}
+
+.select-wrap select{
+
+  /* removes the default arrow */
+  appearance: none;
+
+  background-color: var(--clr-el-bg);
+  border: thin solid var(--clr-border);
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  color: var(--clr-font-gray);
+  line-height: 1.5em;
+  padding: 0.2em 3.5em 0.2em 1em;
+  cursor: pointer;
+
+  /* reset styles */
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/* the select arrow */
+select.select-font{
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position:
+    calc(100% - 18px) calc(0.7em + 2px),
+    calc(100% - 13px) calc(0.7em + 2px),
+    calc(100% - .55em) .3em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.2em 1.2em;
+  background-repeat: no-repeat;
+}
+
+select.select-font:focus{
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    radial-gradient(gray 70%, transparent 72%);
+  background-position:
+    calc(100% - 13px) calc(0.7em + 2px),
+    calc(100% - 18px) calc(0.7em + 2px),
+    calc(100% - .55em) .3em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.2em 1.2em;
+  background-repeat: no-repeat;
+  border-color: var(--clr-border);
+  outline: 0;
+}
+
+.select-font option{
+  background-color: var(--clr-el-bg);
+  color: var(--clr-secondary);
+  padding: 16px 0;
+}
+
+.toggle-theme{
+  cursor: pointer;
+  display: flex;
+}
+
+
+
+/*----------------------------------------------
+------------------------------------------------
+3. Main Body Styles
+------------------------------------------------
+----------------------------------------------*/
+
+.wrapper-content p, .result-break h3, .search-result h1 {
+  color: var(--clr-secondary);
+}
+
+
+.result-box{
+  padding: 40px 0;
+}
+
+.search-result h1{
+  text-transform: capitalize;
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+
+.search-result h2{
+  color: var(--clr-accent);
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.font-gray, .font-accent{
+  font-weight: 500;
+}
+
+.font-gray{
+  color: var(--clr-font-gray);
+}
+
+.font-accent{
+  color: var(--clr-accent);
+}
+
+.synonyms{
+  display: flex;
+}
+
+.synonyms h3.font-accent{
+  margin-right: 10px;
+}
+
+.synonyms h3:first-child{
+  padding-right: 10px;
+}
+
+.pd{
+  padding: 5px 0 30px;
+}
+
+.result-word h3{
+  padding-bottom: 10px;
+}
+
+
+ul{
+  list-style: none;
+}
+
+ul li{
+  color: var(--clr-secondary);
+  margin-left: 30px;
+  line-height: 24px;
+  padding: 6px 0;
+}
+
+ul li::before {
+  content: "\2022";
+  color: var(--clr-accent);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+@media (max-width: 600px){
+  .search-result h1{
+    font-size: 1.8rem;
+  }
+  .search-result h2{
+    font-size:1.2rem;
+  }
+}
+
+.result-break{
+  display: flex;
+  align-items: center;
+}
+
+.result-break h3{
+  text-transform: lowercase;
+}
+
+.line{
+  display: flex;
+  flex-grow: 1;
+  height: 1px;
+  z-index: 10;
+  border: 1px solid var(--clr-break);
+  margin-left: 20px;
+}
+
+
+.line, .line-footer{
+  border: 1px solid var(--clr-break);
+}
+
+.line-footer{
+  height: 1px;
+  z-index: 10;
+}
+
+.result-top{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.play-audio{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-play);
+  padding: 6px;
+  border-radius: 50%;
+  transition: .3s ease;
+}
+
+.play-audio .icon{
+  padding: 10px;
+  border-radius: 50%;
+} 
+
+.play-audio:hover{
+  box-shadow: 0px 4px 30px -4px var(--clr-play);
+}
+
+
+
+/*----------------------------------------------
+------------------------------------------------
+4. Search Input Styles
+------------------------------------------------
+----------------------------------------------*/
+
+.input-wrap {
+  width: 100%;
+  padding: 10px 0;
+  position: relative;
+}
+
+.input-wrap input{
+  width: 100%;
+  padding: 14px 12px;
+  background: var(--clr-el-bg);
+  border-radius: 10px;
+  border: thin solid var(--clr-border);
+  font-family: inherit;
+  color: var(--clr-secondary);
+  font-size: 16px;
+  transition: .2s ease;
+}
+
+.input-wrap input:focus {
+  outline: 1px solid var(--clr-accent);
+}
+
+.input-wrap input::placeholder{
+  font-family: inherit;
+  color: var(--clr-font-gray);
+}
+
+.input-wrap span.icon-input-wrap {
+  position: absolute;
+  right: 12px;
+  top:  20px;
+}
+
+.icon-input-wrap{
+  cursor: pointer;
+}
+
+
+/*----------------------------------------------
+------------------------------------------------
+5. Error Style
+------------------------------------------------
+----------------------------------------------*/
+
+.error{
+  margin-top: 30px;
+  padding: 20px 40px;
+  border: 1px solid var(--clr-accent);
+  background-color: var(--clr-accent-op);
+  border-radius: 10px;
+}
+
+
+
+/*----------------------------------------------
+------------------------------------------------
+6. Footer Style
+------------------------------------------------
+----------------------------------------------*/
+
+.result-footer{
+  display: flex;
+  padding: 30px 0 80px;
+  align-items: center;
+}
+
+.result-footer p{
+  padding-right: 10px;
+}
+
+.result-footer a{
+  display: flex;
+  align-items: center;
+}
+
+.result-footer .external-link-icon{
+  margin-left: 5px;
+}

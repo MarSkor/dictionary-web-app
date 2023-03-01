@@ -6,6 +6,8 @@ import { FiExternalLink } from "react-icons/fi";
 
 const SearchResult = ({ definition }) => {
 
+    console.log("definition", definition)
+
     const _phonetic = definition?.phonetics;
     
     const _foundPhonetic = _phonetic?.find(value => {
@@ -48,6 +50,12 @@ const SearchResult = ({ definition }) => {
         }
     })
 
+    const _adjective = definition.meanings?.find(value => {
+        if(value.partOfSpeech == 'adjective'){
+            return true
+        }
+    })
+
   return (
     <>
     <div className='result-top result-box'>
@@ -55,8 +63,7 @@ const SearchResult = ({ definition }) => {
             <h1>{definition.word}</h1>
             {definition.phonetic ? <h2>{definition?.phonetic}</h2> : <h2>{_foundPhonetic?.text}</h2>}
         </div>
-
-        <PlayAudio _foundPhoneticAudio={_foundPhoneticAudio}/>
+       {_foundPhoneticAudio && <PlayAudio _foundPhoneticAudio={_foundPhoneticAudio}/> }
     </div>
 
 
@@ -65,6 +72,7 @@ const SearchResult = ({ definition }) => {
     {_adverb && <Meaning partOfSpeech={_adverb?.partOfSpeech} definitions={_adverb?.definitions} synonyms={_adverb?.synonyms}/>}
     {_preposition && <Meaning partOfSpeech={_preposition?.partOfSpeech} definitions={_preposition?.definitions} synonyms={_preposition?.synonyms}/>}
     {_conjunction && <Meaning partOfSpeech={_conjunction?.partOfSpeech} definitions={_conjunction?.definitions} synonyms={_conjunction?.synonyms}/>}
+    {_adjective && <Meaning partOfSpeech={_adjective?.partOfSpeech} definitions={_adjective?.definitions} synonyms={_adjective?.synonyms}/>}
 
 
     <hr className='line-footer'/>

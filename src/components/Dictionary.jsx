@@ -40,9 +40,17 @@ const Dictionary = () => {
   }, []);
 
 
+  const handleChange = (e) => {
+    if(e.target.value.trim().length > 0){
+      setQuery(e.target.value)
+    } else {
+      setError("Search field cannot be empty.")
+    }
+  }
+
   const search = () => {
     getWord();
-    setQuery();
+    setQuery("");
   }
 
 
@@ -52,13 +60,15 @@ const Dictionary = () => {
       <div className="input-wrap">
         <input 
         type='text' 
+        name='search'
         placeholder='Search...'
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={handleChange}
         onKeyDown={handleKeyDown}
         spellCheck="true"
         required="required"
+        autoComplete='off'
         /> 
-         <span className="icon-input-wrap" onClick={search}>
+        <span className="icon-input-wrap" onClick={search}>
           <FiSearch 
           size={26} 
           strokeWidth={1.5} 
@@ -66,8 +76,8 @@ const Dictionary = () => {
           title='Search dictionary'
           />
         </span>
-
       </div>
+
 
       <div className="search-result">
         {error ? (

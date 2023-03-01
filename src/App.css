@@ -93,13 +93,13 @@ h3 {
   font-size: 1.1rem;
 }
 
-p, li, a{
+li{
   font-size: 1.1rem;
   font-weight: 400;
 }
 
 @media (min-width: 600px){
-  p, li, a{
+  li{
     font-size: 1.2rem;
   }
 
@@ -460,6 +460,7 @@ ul li::before {
   display: flex;
   padding: 30px 0 80px;
   align-items: center;
+  font-size: 1rem;
 }
 
 .result-footer p{

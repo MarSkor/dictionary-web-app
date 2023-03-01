@@ -13,7 +13,6 @@ const PlayAudio = ({ _foundPhoneticAudio }) => {
     }
   }
 
-  // console.log("_foundPhoneticAudio", _foundPhoneticAudio)
 
   return (
     <>

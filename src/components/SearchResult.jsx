@@ -6,8 +6,6 @@ import { FiExternalLink } from "react-icons/fi";
 
 const SearchResult = ({ definition }) => {
 
-    console.log("definition", definition)
-
     const _phonetic = definition?.phonetics;
     
     const _foundPhonetic = _phonetic?.find(value => {

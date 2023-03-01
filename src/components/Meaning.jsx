@@ -2,8 +2,6 @@ import React from 'react';
 
 
 const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
-
-    console.log("definitions", definitions)
  
   return (
     <>
@@ -39,7 +37,7 @@ const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
     {antonyms?.length > 0 ? (
         <div className="result-word antonyms pd">
             <h3 className='font-gray'>Antonyms:</h3>
-            {synonyms.map((val, i) => (
+            {antonyms.map((val, i) => (
                 <h3 key={i} className='font-accent'>{val}</h3>
             ))}
             

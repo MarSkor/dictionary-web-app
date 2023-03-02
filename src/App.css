@@ -461,8 +461,6 @@ ul li::before {
   padding: 30px 0 80px;
   align-items: center;
   font-size: 1rem;
-
-
 }
 
 .result-footer p{
@@ -473,16 +471,9 @@ ul li::before {
   display: flex;
   align-items: center;
 
-
-
   /* source https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
   overflow-wrap: break-word;
   word-wrap: break-word;
-
-  -ms-word-break: break-all;
-  /* This is the dangerous one in WebKit, as it breaks things wherever */
-  word-break: break-all;
-  /* Instead use this non-standard one: */
   word-break: break-word;
 
   /* Adds a hyphen where the word breaks, if supported (No Blink) */

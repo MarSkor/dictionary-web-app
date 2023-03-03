@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../Theme';
-import {BsSun, BsMoon} from "react-icons/bs";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 const Navbar = () => {
